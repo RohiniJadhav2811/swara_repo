@@ -1,93 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>order</title>
-	<style>
-		div{
-			
-            border-radius: 4px;
-			font-size: 20px;
-			font-weight: bold;
-			color: red;
-			background-color: pink;
-			height: 50%;
-
-			max-height: 1000px;
-		}
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>order</title>
+	<link rel="stylesheet" href="js/bootstrap.css" />
+	<link rel="stylesheet" href="js/design.css" /> 
+	
 
 		
-		form{
-			text-align: center;
-			margin-left: 10px;
-			
-		}
-		a {
-    background-color:red;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 700px;
-  cursor: pointer;
-  text-align: center;
-      }
-
-	  img
-	  {
-		margin-top: 40px;
-		
-	  }
-	  label {
-        display: inline-block;
-        width: 150px;
-		padding: 12px 12px 12px 0;
-      }
-
-	  
-	</style>
 </head>
 
-<body>
-<form action="submit",method="get">
-    <div>
-		<label for="firstname">First Name:</label>
-			<input type="text",id="firstname">
-	</div>
+<body >
 	
-	<div>
-		<label for="menu">Menu wants to order:</label>
-		<input type="text",id="menu">
-	</div>
-	
-	<div>
-		<label for="qty">Quantity:</label>
-		<input type="number",id="qty">
-	</div>
-
-
-
-	<div>
-		<label for="add">Address :</label>
-		<textarea id="add" name="Address" ></textarea>
+	<div class="container">
+		<h1>Contact Us..</h1>
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-6"></div>
+		<div>
+			<label for="firstname">First Name:</label>
+			<input type="text" id="firstname"/>
 		</div>
 
+		<div>
+			<label for="menu">Menu wants to order:</label>
+			<input type="text" id="menu">
+		</div>
+
+		<div>
+			<label for="qty">Quantity:</label>
+			<input type="number" id="qty">
+		</div>
+
+		<div>
+			<label for="phone">Contact No:</label>
+			<input type="tel" id="phone">
+		</div>
+
+
+		<div>
+			<label for="mail">Email Id:</label>
+			<input type="email" id="mail">
+		</div>
+
+
+		<div>
+			<label for="add">Address :</label>
+			<textarea id="add" name="Address"></textarea>
+		</div>
+
+
+
+		<div>
+			<label for="mode">Mode of Payment:</label>
+			<input type="radio" name="mode" id="mode" value="Online">Online
+			<input type="radio" name="mode" id="mode" value="Cash on delivery">Cash on delivery
+
+		</div>
 		
+		<button onclick="onSave()" class="btn btn-success" >Place an Order</button>
+
 	
-	<div>
-		<label for="mode">Mode of Payment:</label>
-		<input type="radio" name="mode">Online
-		<input type="radio" name="mode">Cash on delivery
-		
-	</div><br><br>
-</form>
-	<a href="website2.html">Place Order</a>
+		<br><br>
+	</div>
+	<div class="col"></div>
+</div>
+</div>
+	
+
+	<script src="js/jquery.js"></script>
+	<script>
+		function onSave() {
+			const firstname = $('#firstname').val()
+			const menu = $('#menu').val()
+			const qty = $('#qty').val()
+			const add = $('#add').val()
+			const mode = $('#mode').val()
+			const phone = $('#phone').val()
+			const mail = $('#mail').val()
+
+			const url = `result.html?firstname=${firstname}&menu=${menu}&qty=${qty}&add=${add}&phone=${phone}&mail=${mail}&mode=${mode}`
+			console.log(url)
+			window.location = url
+		}
+	</script>
+
 
 	<br>
-	<img src="C:\Users\swaranjali.adsul\Desktop\swara_repo\HTMLAssignment_1Sept\HTMLAssignment2\img\food.jpg" alt=" " width="1550" height="500">
+	<img src="C:\Users\swaranjali.adsul\Desktop\swara_repo\HTMLAssignment_1Sept\HTMLAssignment2\img\food.jpg" alt=" "
+		width="1550" height="500">
 
-	
+
 
 </body>
