@@ -356,3 +356,38 @@ for (let i=2;i<=num;i++)
 }
 
 showPrimeNumbers(20)
+console.log('using map')
+//using map
+
+
+function showPrimeNumbersMap(nums)
+{ 
+    let n   = []
+    for(let i=2; i<=nums; i++)
+    {
+        let isPrime = true
+        for(let j=2; j<i; j++)
+        {
+            if(i%j == 0 && i != j)
+            {
+                isPrime = false
+            }
+
+        }
+        if(isPrime)
+        {
+            n.push(i)
+        }
+
+    }
+
+    const prime = n.map((value) => {
+        console.log(`Prime Number : ${value}`)
+            })
+
+
+}
+
+
+
+showPrimeNumbersMap(20)
