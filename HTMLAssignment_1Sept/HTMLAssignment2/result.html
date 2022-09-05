@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="js/bootstrap.css" />
+    <link rel="stylesheet" href="js/design.css" />
+</head>
+
+<body onload="onPageLoad()">
+    <div class="container">
+        <h1>Read Details which you entered..</h1>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-6">
+                <div>
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname">
+                </div>
+
+                <div>
+                    <label for="menu">Menu wants to order:</label>
+                    <input readonly type="text" id="menu">
+                </div>
+
+                <div>
+                    <label for="qty">Quantity:</label>
+                    <input readonly type="number" id="qty">
+                </div>
+
+                <div>
+                    <label for="phone">Contact No:</label>
+                    <input readonly type="tel" id="phone">
+                </div>
+
+
+                <div>
+                    <label for="mail">Email Id:</label>
+                    <input readonly type="email" id="mail">
+                </div>
+
+
+                <div>
+                    <label for="add">Address :</label>
+                    <textarea readonly id="add" name="Address"></textarea>
+                </div>
+
+
+
+                <div>
+                    <label for="mode">Mode of Payment:</label>
+                    <input readonly type="text" id="mode">
+
+                </div>
+                
+            </div>
+            <div class="col"></div>
+        </div>
+</div>
+        <script>
+            function onPageLoad() {
+
+                const url = String(window.location)
+                console.log(`url = ${url}`)
+
+                const parts = url.split('?')
+                const queryString = parts[1]
+
+                const input = {}
+                const pairs = queryString.split('&')
+                for (const pair of pairs) {
+                    const temp = pair.split('=')
+                    input[temp[0]] = temp[1]
+                }
+
+                document.getElementById('firstname').value = input['firstname']
+                document.getElementById('menu').value = input['menu']
+                document.getElementById('qty').value = input['qty']
+                document.getElementById('phone').value = input['phone']
+                document.getElementById('mail').value = input['mail']
+                document.getElementById('add').value = input['add']
+                document.getElementById('mode').value = input['mode']
+            }
+        </script>
+</body>
+
+</html>
